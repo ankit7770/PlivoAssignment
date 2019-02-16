@@ -37,11 +37,7 @@ public class CustomerRestController {
 	public ContactBook getContactById(@PathVariable int contactBookId) {
 
 		ContactBook contactBook = contactBookRepo.findContactBookById(contactBookId);
-		
-		/*if (contactBook == null) {
-			throw new CustomerNotFoundException("Customer id not found - " + customerId);
-		}*/
-		
+
 		return contactBook;
 	}
 
@@ -52,9 +48,6 @@ public class CustomerRestController {
 
 		List<ContactBook> contactBook = contactBookRepo.findContactBookByName(contactBookName);
 
-		/*if (contactBook == null) {
-			throw new CustomerNotFoundException("Customer id not found - " + customerId);
-		}*/
 
 		return contactBook;
 	}
@@ -66,9 +59,6 @@ public class CustomerRestController {
 
 		ContactBook contactBook = contactBookRepo.findContactBookByEmail(contactBookEmail);
 
-		/*if (contactBook == null) {
-			throw new CustomerNotFoundException("Customer id not found - " + customerId);
-		}*/
 
 		return contactBook;
 	}
@@ -106,10 +96,6 @@ public class CustomerRestController {
 		ContactBook tempContactBook = contactBookRepo.findContactBookById(contactBookId);
 
 		// throw exception if null
-
-		/*if (tempCustomer == null) {
-			throw new CustomerNotFoundException("Customer id not found - " + customerId);
-		}*/
 
 		contactBookRepo.delete(tempContactBook);
 
